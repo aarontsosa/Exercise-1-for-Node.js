@@ -38,3 +38,38 @@ const rl = readline.createInterface({
 //         console.log('Ugh. Here ya go, boss: %j', address)
 //     })
 // })
+
+//////////Read and Write ////////////////
+rl.question('Input file: ', (input) => {
+    rl.question('Output file: ', (output) =>{
+        rl.close();
+        fs.readFile(input, (err, buffer) =>{
+            if (err){
+                console.log("I've looked through them all and... " + err.message)
+                return;
+            }
+            let content = buffer.toString();
+            let cap = content.toUpperCase();
+            fs.writeFile(output, cap, (err) =>{
+                if(err){
+                    console.log("Yeah... Im not doing that... because "  + err.message)
+                    return;
+                }
+                console.log("Done and did.")
+            });
+        });
+    });        
+});
+
+// rl.question('Output file: ', (filename) => {
+//     rl.close();
+//     s.readFile(filename, (err, buffer) =>{
+//         if (err){
+//             console.log("I've looked through them all and..." + err.message)
+//             return;
+//         }
+//         let content = buffer.toString();
+//         let cap = content.toUpperCase();
+//         return cap;
+//     });
+// });
