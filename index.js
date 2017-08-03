@@ -72,7 +72,7 @@ const rl = readline.createInterface({
 ////// Reformat an image /////
 // request('https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png').pipe(fs.createWriteStream('voodoo.png'))
 gm('voodoo.png')
-    .resize(240, 240, '!')
+    .resize(240, 240)
     .write('voodoo2.png', function (err) {
         if (!err) console.log('done');
 });
