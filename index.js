@@ -1,5 +1,6 @@
 fs = require('fs');
 readline = require('readline');
+let dns = require('dns')
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -23,3 +24,17 @@ const rl = readline.createInterface({
 //         console.log(cap);
 //     });
 // });
+
+///////////Getting the ip address of a website ///////
+// rl.question('Domain Name: ', (filename) => {
+//     console.log('. . .')
+//     rl.close();
+//     dns.lookup(filename, (err, address, family) =>{
+//         if (err){
+//             console.log('Sir, there was a problem.')
+//             console.log(err.message)
+//             return;
+//         }
+//         console.log('Ugh. Here ya go, boss: %j', address)
+//     })
+// })
