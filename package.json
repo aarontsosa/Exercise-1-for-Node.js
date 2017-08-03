@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/aarontsosa/Exercise-1-for-Node.js/issues"
   },
-  "homepage": "https://github.com/aarontsosa/Exercise-1-for-Node.js#readme"
+  "homepage": "https://github.com/aarontsosa/Exercise-1-for-Node.js#readme",
+  "dependencies": {
+    "gm": "^1.23.0",
+    "request": "^2.81.0"
+  }
 }

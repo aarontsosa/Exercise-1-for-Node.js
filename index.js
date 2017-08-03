@@ -1,6 +1,9 @@
-fs = require('fs');
-readline = require('readline');
-let dns = require('dns')
+const fs = require('fs');
+const readline = require('readline');
+const dns = require('dns')
+const https = require('https')
+const gm = require('gm').subClass({imageMagick: true})
+const request = require('request')
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -40,36 +43,36 @@ const rl = readline.createInterface({
 // })
 
 //////////Read and Write ////////////////
-rl.question('Input file: ', (input) => {
-    rl.question('Output file: ', (output) =>{
-        rl.close();
-        fs.readFile(input, (err, buffer) =>{
-            if (err){
-                console.log("I've looked through them all and... " + err.message)
-                return;
-            }
-            let content = buffer.toString();
-            let cap = content.toUpperCase();
-            fs.writeFile(output, cap, (err) =>{
-                if(err){
-                    console.log("Yeah... Im not doing that... because "  + err.message)
-                    return;
-                }
-                console.log("Done and did.")
-            });
-        });
-    });        
-});
-
-// rl.question('Output file: ', (filename) => {
-//     rl.close();
-//     s.readFile(filename, (err, buffer) =>{
-//         if (err){
-//             console.log("I've looked through them all and..." + err.message)
-//             return;
-//         }
-//         let content = buffer.toString();
-//         let cap = content.toUpperCase();
-//         return cap;
-//     });
+// rl.question('Input file: ', (input) => {
+//     rl.question('Output file: ', (output) =>{
+//         rl.close();
+//         fs.readFile(input, (err, buffer) =>{
+//             if (err){
+//                 console.log("I've looked through them all and... " + err.message)
+//                 return;
+//             }
+//             let content = buffer.toString();
+//             let cap = content.toUpperCase();
+//             fs.writeFile(output, cap, (err) =>{
+//                 if(err){
+//                     console.log("Yeah... Im not doing that... because "  + err.message)
+//                     return;
+//                 }
+//                 console.log("Done and did.")
+//             });
+//         });
+//     });        
 // });
+
+
+///////// Save a web page ////////////
+//not done
+
+
+////// Reformat an image /////
+// request('https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png').pipe(fs.createWriteStream('voodoo.png'))
+gm('voodoo.png')
+    .resize(240, 240, '!')
+    .write('voodoo2.png', function (err) {
+        if (!err) console.log('done');
+});
