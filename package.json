@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/test.js",
-    "test-dev": "mocha -m"
+    "test-dev": "mocha -w"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "request": "^2.81.0"
   },
   "devDependencies": {
+    "chai": "^4.1.1",
     "mocha": "^3.5.0"
   }
 }

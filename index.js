@@ -76,3 +76,28 @@ rl.question('filename: ', (filename) => {
 //     .write('voodoo2.png', function (err) {
 //         if (!err) console.log('done');
 // });
+
+rl.question('filename: ', (filename) => {
+    console.log('. . .')
+    rl.close();
+    fs.readFile(filename, (err, buffer) =>{
+        if (err){
+            console.log('ugghh...' + err.message)
+            return;
+        }
+        console.log('Here it is...');
+        let content = buffer.toString();
+        let cap = content.toUpperCase();
+        console.log('Here you go: ');
+        console.log(cap);
+    });
+});
+
+class File(){
+    constructor{
+
+    }
+
+    
+
+}
