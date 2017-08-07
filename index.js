@@ -12,21 +12,21 @@ const rl = readline.createInterface({
 
 
 ///// Getting a txt file and uppercasing them /////
-// rl.question('filename: ', (filename) => {
-//     console.log('. . .')
-//     rl.close();
-//     fs.readFile(filename, (err, buffer) =>{
-//         if (err){
-//             console.log('ugghh...' + err.message)
-//             return;
-//         }
-//         console.log('Here it is...');
-//         let content = buffer.toString();
-//         let cap = content.toUpperCase();
-//         console.log('Here you go: ');
-//         console.log(cap);
-//     });
-// });
+rl.question('filename: ', (filename) => {
+    console.log('. . .')
+    rl.close();
+    fs.readFile(filename, (err, buffer) =>{
+        if (err){
+            console.log('ugghh...' + err.message)
+            return;
+        }
+        console.log('Here it is...');
+        let content = buffer.toString();
+        let cap = content.toUpperCase();
+        console.log('Here you go: ');
+        console.log(cap);
+    });
+});
 
 ///////////Getting the ip address of a website ///////
 // rl.question('Domain Name: ', (filename) => {
@@ -71,8 +71,8 @@ const rl = readline.createInterface({
 
 ////// Reformat an image /////
 // request('https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png').pipe(fs.createWriteStream('voodoo.png'))
-gm('voodoo.png')
-    .resize(240, 240)
-    .write('voodoo2.png', function (err) {
-        if (!err) console.log('done');
-});
+// gm('voodoo.png')
+//     .resize(240, 240)
+//     .write('voodoo2.png', function (err) {
+//         if (!err) console.log('done');
+// });
