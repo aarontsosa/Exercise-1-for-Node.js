@@ -16,16 +16,8 @@ rl.question('filename: ', (filename) => {
     console.log('. . .')
     rl.close();
     fs.readFile(filename, (err, buffer) =>{
-        if (err){
-            console.log('ugghh...' + err.message)
-            return;
-        }
-        console.log('Here it is...');
-        let content = buffer.toString();
-        let cap = content.toUpperCase();
-        console.log('Here you go: ');
-        console.log(cap);
-    });
+        File.cap(filename)
+    })
 });
 
 ///////////Getting the ip address of a website ///////
@@ -77,27 +69,40 @@ rl.question('filename: ', (filename) => {
 //         if (!err) console.log('done');
 // });
 
-rl.question('filename: ', (filename) => {
-    console.log('. . .')
-    rl.close();
-    fs.readFile(filename, (err, buffer) =>{
-        if (err){
-            console.log('ugghh...' + err.message)
-            return;
-        }
-        console.log('Here it is...');
-        let content = buffer.toString();
-        let cap = content.toUpperCase();
-        console.log('Here you go: ');
-        console.log(cap);
-    });
-});
+// rl.question('filename: ', (filename) => {
+//     console.log('. . .')
+//     rl.close();
+//     fs.readFile(filename, (err, buffer) =>{
+//         if (err){
+//             console.log('ugghh...' + err.message)
+//             return;
+//         }
+//         console.log('Here it is...');
+//         let content = buffer.toString();
+//         let cap = content.toUpperCase();
+//         console.log('Here you go: ');
+//         console.log(cap);
+//     });
+// });
 
-class File(){
-    constructor{
+class File {
+    constructor(){
 
     }
 
-    
+    cap(filename, callback) {
+        fs.readFile(filename, (err, buffer) =>{
+            if (err){
+                console.log('ugghh...' + err.message)
+                return;
+            }
+            console.log('Here it is...');
+            let content = buffer.toString();
+            let cap = content.toUpperCase();
+            console.log('Here you go: ');
+            callback(cap);
+        })
+        };
+        }
 
-}
+module.export = File
